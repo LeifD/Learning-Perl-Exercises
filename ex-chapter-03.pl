@@ -1,13 +1,14 @@
 use 5.010;
 use strict;
 use warnings;
+###########################################################################
 
-sub ex_1 {
+sub ch03_ex_1 {
     chomp(my @input = <STDIN>);
     foreach (reverse @input) { say;}
 }
 
-sub ex_2 {
+sub ch03_ex_2 {
     my %names = (
 	'1' => 'fred',
 	'2' => 'betty',
@@ -21,12 +22,12 @@ sub ex_2 {
     foreach (@input) { say $names{$_}; }
 }
 
-sub ex_3_on_new_lines {
+sub ch03_ex_3_on_new_lines {
     chomp(my @input = <STDIN>);
     foreach (sort @input) { say; }
 }
 
-sub ex_3_same_line {
+sub ch03_ex_3_same_line {
     chomp(my @input = <STDIN>);
     foreach(sort @input) { print $_ . ' '; }
 }

@@ -1,18 +1,19 @@
 use 5.010;
 use strict;
 use warnings;
+###########################################################################
 
-sub ex_1 {
+sub ch04_ex_1 {
     my $sum = shift @_;
     foreach (@_) { $sum += $_ }
     $sum;
 }
 
-sub ex_2 {
-    ex_1 1..1000
+sub ch04_ex_2 {
+    ch04_ex_1 1..1000
 }
 
-sub ex_3_helper {
+sub ch04_ex_3_helper {
     my ($cutoff, @array) = @_;
     my @result;
     foreach (@array) {
@@ -21,11 +22,11 @@ sub ex_3_helper {
     @result;
 }
 
-sub ex_3 {
-    say join(' ', ex_3_helper(ex_1(@_) / @_, @_));
+sub ch04_ex_3 {
+    say join(' ', ch04_ex_3_helper(ch04_ex_1(@_) / @_, @_));
 }
 
-sub ex_4 {
+sub ch04_ex_4 {
     my $new_name = shift @_;
     state $name = "";
 
@@ -37,7 +38,7 @@ sub ex_4 {
     $name = $new_name;
 }
 
-sub ex_5 {
+sub ch04_ex_5 {
     my $new_name = shift @_;
     state @names;
 
