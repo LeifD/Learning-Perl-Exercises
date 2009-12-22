@@ -1,3 +1,4 @@
+#!/usr/bin/env perl
 use 5.010;
 use strict;
 use warnings;
@@ -31,3 +32,4 @@ sub ch03_ex_3_same_line {
     chomp(my @input = <STDIN>);
     foreach(sort @input) { print $_ . ' '; }
 }
+

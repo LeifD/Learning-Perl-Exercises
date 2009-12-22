@@ -1,3 +1,4 @@
+#!/usr/bin/env perl
 use 5.010;
 use strict;
 use warnings;
@@ -55,18 +56,18 @@ sub ch6_ex_3 {
 	"aaaaaaaaaaaaaaa" => 123,
 	"da" => 1);
 
-    my $largest_key;
-    my $largest_value;
-    foreach (keys %my_env) {
-	my $size = length $_;
-	$largest_key = $size if $size > $largest_key;
-    }
-    foreach (values %my_env) {
-	my $size = length $_;
-	$largest_value = $size if $size > $largest_value;
-    }
+    my $largest_k = 0;
+    my $largest_v = 0;
+
     while (my($k,$v) = each %my_env) {
-	printf("%${largest_key}s | %${largest_value}s\n", $k,$v);
+	my $k_size = length $k;
+	my $v_size = length $v;
+	$largest_k = $k_size if $k_size > $largest_k;
+	$largest_v = $v_size if $v_size > $largest_v;
+    }
+
+    while (my($k,$v) = each %my_env) {
+	printf("%${largest_k}s | %${largest_v}s\n", $k,$v);
     }
 }
 
